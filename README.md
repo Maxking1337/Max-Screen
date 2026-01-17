@@ -10,3 +10,14 @@
 - Nimmt einen Screenshot und sendet ihn direkt an Discord
 
 
+## Verwendung
+
+RegisterCommand("testscreenshot", function()
+  local webhook = "DEIN_DISCORD_WEBHOOK_LINK"
+  TriggerEvent("max1337:screenupload", webhook, "files[]", { encoding = "jpg" })
+end, false)
+
+RegisterCommand("exportscreenshot", function()
+  local webhook = "DEIN_DISCORD_WEBHOOK_LINK"
+  exports["max-screen"]:UploadScreenshot(webhook, "files[]", { encoding = "jpg" })
+end, false)
