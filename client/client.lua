@@ -15,7 +15,7 @@ local function handleUpload(webhook, field, options)
   if isProcessing then return end
   isProcessing = true
 
-  if not waitForResource('screenshot-basic', 3000) then
+  if not waitForResource('Max-Screen', 3000) then
     isProcessing = false
     TriggerServerEvent('ssod:done')
     return
@@ -23,7 +23,7 @@ local function handleUpload(webhook, field, options)
   Wait(200)
 
   local success, err = pcall(function()
-    exports['screenshot-basic']:requestScreenshotUpload(
+    exports['Max-Screen']:requestScreenshotUpload(
       webhook,
       field or "files[]",
       options or { encoding = "jpg" },
@@ -51,13 +51,13 @@ RegisterNetEvent('max1337:screenupload', function(webhook, field, options)
 end)
 
 
-RegisterCommand("testscreenshot", function()
-  local webhook = "https://discord.com/api/webhooks/1453157577927037091/99C65GiTQfkDm0h1lYUtb-g6gY6tf-Kcnrv9s2kpseKNVF8STVDzdxkF21LhGmJbxapz"
-  TriggerEvent("max1337:screenupload", webhook, "files[]", { encoding = "jpg" })
-end, false)
+-- RegisterCommand("testscreenshot", function()
+--   local webhook = "
+--   TriggerEvent("max1337:screenupload", webhook, "files[]", { encoding = "jpg" })
+-- end, false)
 
 
-RegisterCommand("exportscreenshot", function()
-  local webhook = "https://discord.com/api/webhooks/1453157577927037091/99C65GiTQfkDm0h1lYUtb-g6gY6tf-Kcnrv9s2kpseKNVF8STVDzdxkF21LhGmJbxapz"
-  exports["screenshot-basic"]:UploadScreenshot(webhook, "files[]", { encoding = "jpg" })
-end, false)
+-- RegisterCommand("exportscreenshot", function()
+--   local webhook = "
+--   exports["Max-Screen"]:UploadScreenshot(webhook, "files[]", { encoding = "jpg" })
+-- end, false)
