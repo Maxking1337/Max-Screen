@@ -12,12 +12,12 @@
 
 ## Verwendung
 
-RegisterCommand("testscreenshot", function()
+`RegisterCommand("testscreenshot", function()
   local webhook = "DEIN_DISCORD_WEBHOOK_LINK"
   TriggerEvent("max1337:screenupload", webhook, "files[]", { encoding = "jpg" })
-end, false)
+end, false)`
 
-RegisterCommand("exportscreenshot", function()
+`RegisterCommand("exportscreenshot", function()
   local webhook = "DEIN_DISCORD_WEBHOOK_LINK"
   exports["max-screen"]:UploadScreenshot(webhook, "files[]", { encoding = "jpg" })
-end, false)
+end, false)`
